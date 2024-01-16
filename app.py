@@ -69,16 +69,21 @@ model.fit(df)
 future_df = model.make_future_dataframe(periods=10, freq='MS')
 
 # Perform prediction using the model
-result = model.predict(future_df)
+forecast = model.predict(future_df)
 
-# Visualization of prediction results using Prophet
-fig = model.plot(result)
+# ------------------ Visualization of prediction results using Prophet ------------------
+fig = model.plot(forecast)
 try:
     st.header("Predictive performance visualized")
-    st.plotly_chart(fig, use_container_width=True) 
+    st.plotly_chart(fig, use_container_width=True)     
 except:
     pass
-    
+
+fig2 = model.plot_components(forecast);
+st.header("Weekly and seasonality trends")
+st.plotly_chart(fig2, use_container_width=True)     
+
+# ------------------ Visualization of prediction results using Prophet ------------------
 # Perform cross-validation to evaluate model performance
 cv_results = cross_validation(model=model,
                               initial=pd.to_timedelta(30*20, unit='D'),
