@@ -79,9 +79,12 @@ try:
 except:
     pass
 
-fig2 = model.plot_components(forecast);
-st.header("Weekly and seasonality trends")
-st.plotly_chart(fig2, use_container_width=True)     
+try:
+    fig2 = model.plot_components(forecast);
+    st.header("Weekly and seasonality trends")
+    st.plotly_chart(fig2, use_container_width=True)     
+except:
+    pass
 
 # ------------------ Visualization of prediction results using Prophet ------------------
 # Perform cross-validation to evaluate model performance
