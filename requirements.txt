@@ -1,6 +1,11 @@
 # requirements.txt
-streamlit
-plotly
-prophet
-pandas
-polars
+geopandas==0.14.2
+openpyxl==3.1.2
+folium==0.15.1
+geopy==2.4.1
+plotly==5.18.0
+branca==0.7.0
+pyarrow==11.0.0
+matplotlib==3.7.2
+streamlit_folium==0.18.0
+prophet 
