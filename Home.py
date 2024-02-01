@@ -6,7 +6,7 @@ parent_dir = os.path.dirname(os.path.realpath(__file__))
 gparent_dir = os.path.dirname( parent_dir )
 sys.path.append(gparent_dir)
 sys.path.append(parent_dir)
-sys.path.append( parent_dir + 'rcamps' )
+# sys.path.append( parent_dir + 'rcamps' )
 
 print( 'apps.py\n Current',os.curdir, 'parent:', parent_dir, 'Granny:', gparent_dir)
 
